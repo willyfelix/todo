@@ -1,0 +1,18 @@
+@import 'reset.css';
+
+.main, .container, .details {
+    border: solid 10px;
+    height: 100vh;
+}
+.main{
+    width: var(--menuWidth);
+    border-color: #24ff00;
+}
+.container {
+    width: calc(100vw - (var(--menuWidth) + var(--detailsWidth)));
+    border-color: #fa00ff;
+}
+.details {
+    width: var(--detailsWidth);
+    border-color:  #0500ff;
+}
