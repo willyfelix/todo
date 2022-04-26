@@ -16,3 +16,29 @@
     width: var(--detailsWidth);
     border-color:  #0500ff;
 }
+body {
+   font-family: 'Roboto', 'Lato', sans-serif; 
+}
+
+/* --- menu - header --- */
+
+.main > .main__header__profile {
+    flex-direction: column;
+    font-size: 0.7em;
+}
+.main input[type="search"],
+.main input[type="search"] {
+    font-size: 1em;
+}
+.main .main__header__profile > div {
+    width: var(--menuWidth);
+    align-items: center;
+    justify-content: space-around;
+}
+.menu .header__img__profile {
+    width: 20%;
+}
+.main .main__header__profile svg {
+    width: 24px;
+    height: 24px;
+}
