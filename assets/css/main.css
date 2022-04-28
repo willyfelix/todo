@@ -22,6 +22,7 @@ body {
 
 /* Quando a largura mínima for de 768px aplique este CSS */
 @media (min-width: 768px) {
+     /* especificidade CSS. Quanto mais específico o seletor, mais importante. */
     html body {
         background-color: unset;
         color: initial;

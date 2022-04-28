@@ -1,44 +1,92 @@
 @import 'reset.css';
 
 .main, .container, .details {
-    border: solid 10px;
+    border: solid 3px;
     height: 100vh;
 }
+
+.text {
+    font-family: 'Roboto', 'Lato', sans-serif;
+    font-size: 0.9em;
+    color: gray;
+}
+
 .main{
     width: var(--menuWidth);
     border-color: #24ff00;
+    flex-direction: column;
 }
+
 .container {
     width: calc(100vw - (var(--menuWidth) + var(--detailsWidth)));
     border-color: #fa00ff;
 }
+
 .details {
     width: var(--detailsWidth);
     border-color:  #0500ff;
 }
+
 body {
    font-family: 'Roboto', 'Lato', sans-serif; 
 }
 
-/* --- menu - header --- */
+/* ----- menu - header ----- */
 
 .main > .main__header__profile {
     flex-direction: column;
     font-size: 0.7em;
 }
+
 .main input[type="search"],
 .main input[type="search"] {
     font-size: 1em;
 }
+
 .main .main__header__profile > div {
     width: var(--menuWidth);
     align-items: center;
     justify-content: space-around;
 }
-.menu .header__img__profile {
+
+.main .main__header__profile img {
     width: 20%;
 }
+
 .main .main__header__profile svg {
     width: 24px;
     height: 24px;
 }
+
+.main > .activity ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 0.5px rgba(100, 100, 100, 0.2);
+}
+
+.main > .activity ul li {
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    font-size: 0.9em;
+}
+
+.main > .activity ul li:hover {
+    background-color: rgba(100,100,100,0.1);
+    cursor: pointer;
+}
+
+.main > .activity ul li > svg {
+    margin-right: 10%
+}
+
+header.main__header__profile > div:first-child {
+    margin-left: 15px;
+}
+
+header.main__header__profile > div {
+    margin-top: 15px;
+}
+/* ---- fim menu - header ------ */
