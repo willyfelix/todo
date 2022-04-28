@@ -1,20 +1,22 @@
 @import 'reset.css';
 
-.main, .container, .details {
-    border: solid 3px;
+.menu, .container, .details {
     height: 100vh;
 }
-
-.text {
+.details {
+    border: solid 3px;
+}
+/*.text {
     font-family: 'Roboto', 'Lato', sans-serif;
     font-size: 0.9em;
     color: gray;
-}
+}*/
 
 .main{
     width: var(--menuWidth);
     border-color: #24ff00;
     flex-direction: column;
+    background-color: #F2F2F2;
 }
 
 .container {
@@ -90,3 +92,61 @@ header.main__header__profile > div {
     margin-top: 15px;
 }
 /* ---- fim menu - header ------ */
+
+
+
+/* --------- main - .container --------*/
+
+.container {
+    width: 100%;
+    height: inherit;
+    flex-direction: column;
+    background: url('../images/bg-phone.jpg') center no-repeat;
+    background-size: cover ;
+}
+.container > header,
+.container > footer {
+    height: 133px;
+    border: solid 1px red ;
+}
+
+.container > section.tasks {
+    height: calc(100vh - (133px * 2));
+}
+
+.container > header {
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 0 0 2px #333;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.container > header > div:first-child {
+    margin-top: 2%;
+    justify-content: space-between;
+}
+.container > footer {
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 0 0 3px #0500ff;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+/* Tablet */
+@media(min-width: 768px) {
+    .container {
+        background: url('../images/bg-tablet.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* Desktop */
+@media(min-width: 1280px) {
+    .container {
+        background: url('../images/bg-desktop.jpg') center no-repeat ;
+        background-size: cover;
+    }
+}
+
+/* --------- FIM main - .container --------*/

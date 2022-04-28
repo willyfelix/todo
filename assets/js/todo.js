@@ -1,40 +1,70 @@
-import { escreve } from "./utils/write.js";
+const db = [
+  {
+    id: 1,
+    title: "Concluir App Conexão Arte",
+    steps: [
+      { step: "Ajustar textos" },
+      { step: "Trocar imagens para imagens públicas" },
+      { step: "Publicar no Expo" },
+      { step: "Publicar no Expo Store Connect" },
+    ],
+    done: false,
+    dueDate: "2022-05-06",
+    reminder: "2022-05-02 10:00",
+  },
 
-console.log("Lets go!");
-console.info("Decola go!");
-console.error("Forçando um erro!");
-console.warn("Forçando um alerta!");
-//case sensitive - camelCase
-//const - constante - Não muda. Nunca. A não ser objetos e referências, aí o seu conteúdo pode mudar.
-const nome = "Williane Felix";
-//let - variável - pode mudar a qualquer momento.
-let email = "williane.0730@gmail.com";
-//var nome
-//tc39 - Grupo de Tecnologia dentro ECMA International - Responsável EcmaScript - ES2015, ....ES2017...ESNEXT - Código intermediário, traduz essa versão mais moderna para uma versão compatível.
-// Transpiladores. BabelJS
-console.log(`Nome: ${nome} Email: ${email}`);
+  {
+    id: 2,
+    title: "Aula 4 Fiap - Avanade",
+    steps: [{ step: "Atributos Globais" }, { step: "Estrutura CSS" }],
+    done: true,
+    dueDate: "2022-04-28",
+  },
+];
+console.log(db[0].title);
 
-if (nome == "Williane Felix") {
-  console.log("é igual");
-}
-// hoisting
+const newTask = document.querySelector("#inputTxtNewTask");
+const form = document.querySelector("#addNewTask");
+form.addEventListener("submit", (e) => {
 
-//const e let não sofrem hoisting,
+  e.preventDefault();
+});
+newTask.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.key == "Enter") {
+    alert(newTask.value);
 
-escreve(`Seja bem-vindo ${nome}`);
-escreve("Treinamento HTML5, CSS3 e JS");
-// #############################################################################
-// objeto.metodo();
-// objeto.propriedade = valor;
-// document é um objeto.
-//window é um objeto. window.innerHeight window.innerWidth
-// #############################################################################
+    db.push({ id: Number(db.length) + 1, title: newTask.value });
+    newTask.value = "";
+    console.log(db);
+  }
+});
 
-// Em JavaScript existem 7 tipos de erros
+// exemplo de array
+//const frutas = ["maçã", "banana", "abacaxi", "abacate"];
 
-// eval(' console.log("teste")');
-// Type Error, Reference Error, Syntax Error, Eval, Range Error, Iternal Error, URIError (URI - Uniform Resource Identifier -  https://www.fiap.com.br/fiapon?id=100&teste=1)
+// frutas[3];
+// frutas.length;
+// frutas[frutas.length - 1];
 
-// Type, Reference, Syntax.
+//console.log(frutas.at(-1));
 
-// #############################################################################
+//TypeScript
+//Criando um objeto literal
+//JavaScript Object Notation - JSON
+// const dados = {
+//   nome: "Glaucio Daniel",
+//   idade: 36,
+//   programador: true,
+//   acao: () =>
+//  {
+//     console.log("Executando uma ação");
+//   },
+// };
+
+//Objeto é um conjuto de atributos(propriedades ou valores) e métodos(ações ou funçõs)
+//console.log(dados.nome);
+//console.log("Idade: ", dados.idade);
+
+//dados.acao();
