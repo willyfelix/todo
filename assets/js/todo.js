@@ -1,3 +1,15 @@
+import { addTask, getAllTasks } from "./utils/domFunctions.js";
+
+// Tarefas - Armazenar as tarefas em algum lugar.
+// Por enquanto estamos armazenando na memória.
+// usamos uma constante. Armzenamento em memória é volátil. f5 perde.
+// Em localStorage e sessionStorage.
+
+//NodeJS - MongoDB ou Firebase. Armazenamento em Banco de dados. Armazenamento persistente.
+
+// pegar { step: "Publicar no Expo" }:
+//  console.log(db[0].steps[2].step)
+
 const db = [
   {
     id: 1,
@@ -21,24 +33,42 @@ const db = [
     dueDate: "2022-04-28",
   },
 ];
-console.log(db[0].title);
+
+getAllTasks(db);
+
+//console.log(db[0].title);
+// DOM - Document Object Model - É o JavaScript acessando o HTML e manipulando ele.
+// HTML ele é compilado pelo navegador em uma árvore de comandos, chamada DOM.
 
 const newTask = document.querySelector("#inputTxtNewTask");
 const form = document.querySelector("#addNewTask");
-form.addEventListener("submit", (e) => {
 
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
 newTask.addEventListener("keyup", (e) => {
   e.preventDefault();
   e.stopPropagation();
   if (e.key == "Enter") {
+    if (!newTask.value) {
+      alert("Digite uma nova tarefa, para adicionar.")
+  } else {
     alert(newTask.value);
-
-    db.push({ id: Number(db.length) + 1, title: newTask.value });
-    newTask.value = "";
-    console.log(db);
   }
+    const d = new Date();
+    const today = `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`;
+
+    db.push({ 
+        id: Number(db.length) + 1, 
+        title: newTask.value, 
+        done: false, 
+        dueDate: today,
+      });
+
+      newTask.value = "";
+      console.log(db);
+    }
 });
 
 // exemplo de array
@@ -68,3 +98,5 @@ newTask.addEventListener("keyup", (e) => {
 //console.log("Idade: ", dados.idade);
 
 //dados.acao();
+
+// db.push - inserindo uma nova tarefa no array.

@@ -132,7 +132,20 @@ header.main__header__profile > div {
     justify-content: space-between;
     padding: 5%;
 }
-
+.task {
+    width: 90%;
+    margin: 2% 5%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(220, 220, 220, 0.7);
+    border-radius: 5px;
+}
+.task:hover {
+    background:  rgba(240, 240, 240);
+    cursor:pointer ;
+}
 /* Tablet */
 @media(min-width: 768px) {
     .container {
