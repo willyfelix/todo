@@ -31,6 +31,7 @@ export function updateTask() {
 }
   //alert("Listando todas tarefas");
   //chocolate apenas pra explicar que pode ser qualquer nome
+  //forEach pra passar por cada elemento.
 export function getAllTasks(chocolate) {
   chocolate.forEach((item) => {
     addTask(item);

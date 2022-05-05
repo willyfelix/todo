@@ -134,13 +134,20 @@ header.main__header__profile > div {
 }
 .task {
     width: 90%;
-    margin: 2% 5%;
-    height: 80px;
+    height: 40px;
+    margin: 0.5% 5%;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    background: rgba(220, 220, 220, 0.7);
+    background: rgba(220, 220, 220, 0.8);
     border-radius: 5px;
+}
+.container > header > div:first-child {
+    margin-top: 2%;
+    justify-content: space-between;
+}
+.tasks {
+    flex-direction: column;
 }
 .task:hover {
     background:  rgba(240, 240, 240);
